@@ -1,9 +1,11 @@
 # Visit https://github.com/lowlighter/metrics/blob/master/action.yml for full reference
 name: Metrics
 on:
-  # Schedule updates
-  schedule: [{cron: "17 2 * * 1"}]
-  push: {branches: "main"}
+  schedule:
+    - cron:  '17 2 * * 1'
+  push:
+    branches:
+      - main
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
