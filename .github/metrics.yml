@@ -3,7 +3,7 @@ name: Metrics
 on:
   # Schedule updates
   schedule: [{cron: "17 2 * * 1"}]
-  push: {branches: "master"}
+  push: {branches: "main"}
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
@@ -14,7 +14,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
-
+          committer_branch: main
           user: hrueger
           template: classic
           base: header, activity, community, repositories, metadata
